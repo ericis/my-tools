@@ -30,7 +30,7 @@ To get an overview, watch how this person [installed xfce4 on Kali for Linux on 
 
 ### Old `xrdp` Steps
 
-_You will see `/etc/init.d/xrdp start` used instead of `systemctl start xrdp`. This is because `systemd` is [not installed on WSL](https://github.com/MicrosoftDocs/WSL/issues/457#issuecomment-511495846).
+_You will see `/etc/init.d/xrdp start` used instead of `systemctl start xrdp`. This is because `systemd` is [not installed on WSL](https://github.com/MicrosoftDocs/WSL/issues/457#issuecomment-511495846)._
 
 We are going to modify [these instructions](https://linuxize.com/post/how-to-install-xrdp-on-ubuntu-18-04/) a little for WSL.
 
