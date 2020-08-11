@@ -23,6 +23,13 @@ For Ubuntu 18, we're going to install a graphical interface for WSL and use Wind
 
 To get an overview, watch how this person [installed xfce4 on Kali for Linux on WSL](https://www.youtube.com/watch?v=dAoIEoszHa0). _We'll follow some slightly different steps._
 
+### New `xrdp` Steps
+
+1. Follow the steps outlined in Griffin's IT Library for ["Easy install xRDP on Ubuntu"](https://c-nergy.be/blog/?p=14888).
+2. For sound to work in Remote Desktop, you can append the pulseaudio command to your xsession (e.g. `echo pulseaudio --start >> ~/.xsession`)
+
+### Old `xrdp` Steps
+
 _You will see `/etc/init.d/xrdp start` used instead of `systemctl start xrdp`. This is because `systemd` is [not installed on WSL](https://github.com/MicrosoftDocs/WSL/issues/457#issuecomment-511495846).
 
 We are going to modify [these instructions](https://linuxize.com/post/how-to-install-xrdp-on-ubuntu-18-04/) a little for WSL.
@@ -44,7 +51,6 @@ $ sudo service xrdp status
 
 Now, we need to configure xrdp and the xfce4
 
-
 $ hostname -I
  xxx.xx.xxx.xx
 ```
@@ -52,3 +58,8 @@ $ hostname -I
 Copy the IP address from `hostname -I`.
 
 Now, open Windows Remote Desktop and paste the IP in "Computer", but append `:3389` for the xrdp port.
+
+## WSL Example Files
+
+- [~/.bashrc](./linux/.bashrc) *runs for every terminal session
+- [~/.xsession](./linux/.xsession) *runs for every remote desktop session
